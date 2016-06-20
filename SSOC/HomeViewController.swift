@@ -292,7 +292,7 @@ class HomeViewController: UIViewController, SettingsDelegate {
         //flag = true la cap nhat gia tri default
         //flag = false la cap nhat gia tri cua user
         if flagDefault == true {
-            if dataTemp[0] == "8.00"
+            if dataTemp[0] == "08.00"
                 && dataTemp[1] == "11.00" && dataTemp[2] == "16.00"
                 && dataTemp[3] == "19.00" && dataTemp[4] == "21.00"
                 && dataTemp[5] == "22.00" && dataTemp[6] == "50"{
