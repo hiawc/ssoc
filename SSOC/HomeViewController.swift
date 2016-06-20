@@ -217,13 +217,16 @@ class HomeViewController: UIViewController, SettingsDelegate {
         dataDelegate[5] = settings[5]
         dataDelegate[6] = settings[6]
         
-        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_LOW, 0)) {
-            self.timer1.invalidate()
-            dispatch_async(dispatch_get_main_queue(), {
-                self.timer2 = NSTimer.scheduledTimerWithTimeInterval(10, target: self, selector: #selector(HomeViewController.checkData), userInfo: nil, repeats: true)
+        self.timer1.invalidate()
+        self.timer2 = NSTimer.scheduledTimerWithTimeInterval(10, target: self, selector: #selector(HomeViewController.checkData), userInfo: nil, repeats: true)
 
-            })
-        }
+//        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_LOW, 0)) {
+//            self.timer1.invalidate()
+//            dispatch_async(dispatch_get_main_queue(), {
+//                self.timer2 = NSTimer.scheduledTimerWithTimeInterval(10, target: self, selector: #selector(HomeViewController.checkData), userInfo: nil, repeats: true)
+//
+//            })
+//        }
     }
     
     func checkResistor(){
@@ -277,9 +280,13 @@ class HomeViewController: UIViewController, SettingsDelegate {
         for i in 0..<dataDelegate.count {
             print("dataDelegate: ", dataDelegate[i])
         }
-       
-        for i in 0..<dataTemp.count {
-            print("dataTemp: ", dataTemp[i])
+
+        for i in 0..<6 {
+            if dataTemp[i].characters.count < 5 {
+                dataTemp[i] = "0\(dataTemp[i])"
+                print("dataTemp: ", dataTemp[i])
+
+            }
         }
 
         //flag = true la cap nhat gia tri default
@@ -425,6 +432,7 @@ class HomeViewController: UIViewController, SettingsDelegate {
                 self.responseCode = String(data: data, encoding: NSUTF8StringEncoding)
                 print("data: ",self.responseCode)
                 if self.responseCode == "true" {
+                    
                     self.timer3 = NSTimer.scheduledTimerWithTimeInterval(10, target: self, selector: #selector(HomeViewController.checkResistor), userInfo: nil, repeats: true)
 
                 } else {
