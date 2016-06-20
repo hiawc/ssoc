@@ -1,0 +1,29 @@
+{
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "D310D4916D881D443225FAC3D55180619F342255" : 0,
+    "E15D80FBC82FF2F60AAB97BF144F89753233ADB6" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "BDD8155E-C085-4F39-A3D8-56CDBA938D49",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "D310D4916D881D443225FAC3D55180619F342255" : "DatePickerDialog-iOS-Swift\/",
+    "E15D80FBC82FF2F60AAB97BF144F89753233ADB6" : "ios-picker-dialog\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "SSOC",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "SSOC.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/squimer\/DatePickerDialog-iOS-Swift.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "D310D4916D881D443225FAC3D55180619F342255"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/aguynamedloren\/ios-picker-dialog.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "E15D80FBC82FF2F60AAB97BF144F89753233ADB6"
+    }
+  ]
+}
