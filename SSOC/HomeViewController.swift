@@ -239,7 +239,7 @@ class HomeViewController: UIViewController, SettingsDelegate {
             spinner.showAnimated(true) {
                 self.backView.hidden = true
             }
-            alertShow("Updated", message: "")
+            alertShow("Cập nhật thành công", message: "")
 
             timer3.invalidate()
             timer1 = NSTimer.scheduledTimerWithTimeInterval(30, target: self, selector: #selector(HomeViewController.getAPI), userInfo: nil, repeats: true)
@@ -466,7 +466,6 @@ class HomeViewController: UIViewController, SettingsDelegate {
                     print("bool: ", self.offResistor)
                     
                     if self.offResistor == true {
-                        self.backView.hidden = true
 
                         self.settingsButton.enabled = true
                         self.defaultSettingsButton.enabled = true
@@ -477,7 +476,6 @@ class HomeViewController: UIViewController, SettingsDelegate {
                         self.settingsButton.backgroundColor = self.uicolorFromHex(0xD8534F)
 
                     } else {
-                        self.backView.hidden = true
                         self.settingsButton.enabled = false
                         self.defaultSettingsButton.enabled = false
                         self.defaultSettingsButton.backgroundColor = UIColor.grayColor()
