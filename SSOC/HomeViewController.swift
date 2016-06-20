@@ -466,14 +466,18 @@ class HomeViewController: UIViewController, SettingsDelegate {
                     print("bool: ", self.offResistor)
                     
                     if self.offResistor == true {
+                        self.backView.hidden = true
+
                         self.settingsButton.enabled = true
                         self.defaultSettingsButton.enabled = true
-                        self.defaultSettingsButton.backgroundColor = UIColor(red: 92, green: 183, blue: 92, alpha: 1.0)
-                        self.settingsButton.backgroundColor = UIColor(red: 216, green: 83, blue: 79, alpha: 1.0)
+//                        self.settingsButton.backgroundColor = UIColor(red: 216, green: 83, blue: 79, alpha: 1.0)
 
                         self.resistorButton.setTitle("TẮT ĐIỆN TRỞ", forState: .Normal)
-                    } else {
+                        self.defaultSettingsButton.backgroundColor = self.uicolorFromHex(0x5CB75C)
+                        self.settingsButton.backgroundColor = self.uicolorFromHex(0xD8534F)
 
+                    } else {
+                        self.backView.hidden = true
                         self.settingsButton.enabled = false
                         self.defaultSettingsButton.enabled = false
                         self.defaultSettingsButton.backgroundColor = UIColor.grayColor()
@@ -481,7 +485,7 @@ class HomeViewController: UIViewController, SettingsDelegate {
 
                         self.resistorButton.setTitle("BẬT ĐIỆN TRỞ", forState: .Normal)
                     }
-                    
+                
                     var temp = self.istarData["A4"] as! Int
                     self.collectorTempLabel.text = "\(temp)℃"
 
@@ -554,6 +558,15 @@ class HomeViewController: UIViewController, SettingsDelegate {
     override func supportedInterfaceOrientations() -> UIInterfaceOrientationMask {
         return UIInterfaceOrientationMask.Portrait
     }
+    
+    func uicolorFromHex(rgbValue:UInt32)->UIColor{
+        let red = CGFloat((rgbValue & 0xFF0000) >> 16)/256.0
+        let green = CGFloat((rgbValue & 0xFF00) >> 8)/256.0
+        let blue = CGFloat(rgbValue & 0xFF)/256.0
+        
+        return UIColor(red:red, green:green, blue:blue, alpha:1.0)
+    }
+
 }
 
 extension UINavigationController {
@@ -573,6 +586,6 @@ extension UIAlertController {
     }
     
     public override func supportedInterfaceOrientations() -> UIInterfaceOrientationMask {
-        return UIInterfaceOrientationMask.All
+        return UIInterfaceOrientationMask.Portrait
     }
 }
